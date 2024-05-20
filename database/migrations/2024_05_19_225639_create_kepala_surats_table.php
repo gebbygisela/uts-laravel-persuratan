@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_kop');
             $table->text('alamat_kop');
             $table->string('nama_tujuan');
-            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_user')->references('id')->on('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }
